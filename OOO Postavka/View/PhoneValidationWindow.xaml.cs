@@ -24,6 +24,7 @@ namespace OOO_Postavka.View
     {
         private const string API_URL = "http://localhost:4444/TransferSimulator/mobilePhone";
         private Phone ApiResult {  get; set; }
+        //HttpRequest http = new HttpRequest(BaseAddress=new Uri("http://localhost:4444/TransferSimulator/"));
         public PhoneValidationWindow()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace OOO_Postavka.View
 
         private async void GetDataClick(object sender, RoutedEventArgs e)
         {
+            //ApiResult = await http.GetAsJsonAsync<Phone>("mobilePhone");
             ApiResult = await API_URL.GetJsonAsync<Phone>();
             phoneLabel.Content = ApiResult.Value;
         }
